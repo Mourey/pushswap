@@ -12,10 +12,6 @@
 
 #include "push_swap.h"
 
-int		ft_sqrt_approx(int n);
-int		get_chunk_size(int n);
-void	push_back_max(t_context *ctx);
-
 static void	push_chunk(t_context *ctx, int lo, int hi)
 {
 	int	mid;

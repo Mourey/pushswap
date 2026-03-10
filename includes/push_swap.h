@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "../libft/libft.h"
-# include "../libft/ft_printf.h"
 # include <limits.h>
 
 # define OP_SA   0
@@ -119,6 +118,11 @@ void	sort_five(t_context *ctx);
 
 /* sort_simple.c */
 void	sort_simple(t_context *ctx);
+
+/* sort_medium_utils.c */
+int		ft_sqrt_approx(int n);
+int		get_chunk_size(int n);
+void	push_back_max(t_context *ctx);
 
 /* sort_medium.c */
 void	sort_medium(t_context *ctx);
