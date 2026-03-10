@@ -14,7 +14,8 @@
 
 void	do_sa(t_context *ctx)
 {
-	op_sa(&ctx->a);
+	if (!op_sa(&ctx->a))
+		return ;
 	write(1, "sa\n", 3);
 	ctx->ops[OP_SA]++;
 	ctx->total_ops++;
@@ -22,7 +23,8 @@ void	do_sa(t_context *ctx)
 
 void	do_sb(t_context *ctx)
 {
-	op_sb(&ctx->b);
+	if (!op_sb(&ctx->b))
+		return ;
 	write(1, "sb\n", 3);
 	ctx->ops[OP_SB]++;
 	ctx->total_ops++;
@@ -30,7 +32,8 @@ void	do_sb(t_context *ctx)
 
 void	do_ss(t_context *ctx)
 {
-	op_ss(&ctx->a, &ctx->b);
+	if (!op_ss(&ctx->a, &ctx->b))
+		return ;
 	write(1, "ss\n", 3);
 	ctx->ops[OP_SS]++;
 	ctx->total_ops++;

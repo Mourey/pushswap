@@ -6,19 +6,19 @@
 /*   By: rmourey- <rmourey-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 12:00:00 by rmourey-          #+#    #+#             */
-/*   Updated: 2026/02/24 12:00:00 by rmourey-         ###   ########.fr       */
+/*   Updated: 2026/03/10 14:36:13 by rmourey-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rev_rotate(t_stack *s)
+static int	rev_rotate(t_stack *s)
 {
 	int	tmp;
 	int	i;
 
 	if (s->size < 2)
-		return ;
+		return (0);
 	tmp = s->data[s->size - 1];
 	i = s->size - 1;
 	while (i > 0)
@@ -27,20 +27,24 @@ static void	rev_rotate(t_stack *s)
 		i--;
 	}
 	s->data[0] = tmp;
+	return (1);
 }
 
-void	op_rra(t_stack *a)
+int	op_rra(t_stack *a)
 {
-	rev_rotate(a);
+	return (rev_rotate(a));
 }
 
-void	op_rrb(t_stack *b)
+int	op_rrb(t_stack *b)
 {
-	rev_rotate(b);
+	return (rev_rotate(b));
 }
 
-void	op_rrr(t_stack *a, t_stack *b)
+int	op_rrr(t_stack *a, t_stack *b)
 {
-	rev_rotate(a);
-	rev_rotate(b);
+	int	ret;
+
+	ret = rev_rotate(a);
+	ret += rev_rotate(b);
+	return (ret > 0);
 }

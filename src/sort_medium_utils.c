@@ -22,16 +22,6 @@ int	ft_sqrt_approx(int n)
 	return (i);
 }
 
-int	get_chunk_size(int n)
-{
-	int	size;
-
-	size = (n * 3) / 100 + 14;
-	if (size < 5)
-		size = 5;
-	return (size);
-}
-
 void	push_back_max(t_context *ctx)
 {
 	int	pos;

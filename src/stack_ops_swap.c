@@ -12,30 +12,33 @@
 
 #include "push_swap.h"
 
-void	op_sa(t_stack *a)
+static int	swap(t_stack *s)
 {
 	int	tmp;
 
-	if (a->size < 2)
-		return ;
-	tmp = a->data[0];
-	a->data[0] = a->data[1];
-	a->data[1] = tmp;
+	if (s->size < 2)
+		return (0);
+	tmp = s->data[0];
+	s->data[0] = s->data[1];
+	s->data[1] = tmp;
+	return (1);
 }
 
-void	op_sb(t_stack *b)
+int	op_sa(t_stack *a)
 {
-	int	tmp;
-
-	if (b->size < 2)
-		return ;
-	tmp = b->data[0];
-	b->data[0] = b->data[1];
-	b->data[1] = tmp;
+	return (swap(a));
 }
 
-void	op_ss(t_stack *a, t_stack *b)
+int	op_sb(t_stack *b)
 {
-	op_sa(a);
-	op_sb(b);
+	return (swap(b));
+}
+
+int	op_ss(t_stack *a, t_stack *b)
+{
+	int	ret;
+
+	ret = op_sa(a);
+	ret += op_sb(b);
+	return (ret > 0);
 }

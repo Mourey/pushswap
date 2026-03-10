@@ -76,7 +76,7 @@ void	sort_medium(t_context *ctx)
 			sort_five(ctx);
 		return ;
 	}
-	chunk_sz = get_chunk_size(ctx->a.size);
+	chunk_sz = ft_sqrt_approx(ctx->a.size);
 	phase_one(ctx, chunk_sz);
 	phase_two(ctx);
 }

@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-#include "../libft/get_next_line.h"
+#include "../src/push_swap.h"
 
-int		exec_operation(t_context *ctx, char *line);
-int		read_and_exec(t_context *ctx);
+int			exec_operation(t_context *ctx, char *line);
+int			read_and_exec(t_context *ctx);
 
 static void	checker_error_exit(t_context *ctx)
 {

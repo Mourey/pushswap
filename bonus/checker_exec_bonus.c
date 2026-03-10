@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
 #include "../libft/get_next_line.h"
+#include "../src/push_swap.h"
 
 static int	exec_swap_push(t_context *ctx, char *line)
 {

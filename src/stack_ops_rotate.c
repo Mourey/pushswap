@@ -12,13 +12,13 @@
 
 #include "push_swap.h"
 
-static void	rotate(t_stack *s)
+static int	rotate(t_stack *s)
 {
 	int	tmp;
 	int	i;
 
 	if (s->size < 2)
-		return ;
+		return (0);
 	tmp = s->data[0];
 	i = 0;
 	while (i < s->size - 1)
@@ -27,20 +27,24 @@ static void	rotate(t_stack *s)
 		i++;
 	}
 	s->data[s->size - 1] = tmp;
+	return (1);
 }
 
-void	op_ra(t_stack *a)
+int	op_ra(t_stack *a)
 {
-	rotate(a);
+	return (rotate(a));
 }
 
-void	op_rb(t_stack *b)
+int	op_rb(t_stack *b)
 {
-	rotate(b);
+	return (rotate(b));
 }
 
-void	op_rr(t_stack *a, t_stack *b)
+int	op_rr(t_stack *a, t_stack *b)
 {
-	rotate(a);
-	rotate(b);
+	int	ret;
+
+	ret = rotate(a);
+	ret += rotate(b);
+	return (ret > 0);
 }

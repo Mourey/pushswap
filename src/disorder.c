@@ -34,7 +34,7 @@ static long	count_inversions(t_stack *a)
 	return (inv);
 }
 
-double	compute_disorder(t_stack *a)
+float	compute_disorder(t_stack *a)
 {
 	long	inv;
 	long	max_inv;
@@ -45,5 +45,5 @@ double	compute_disorder(t_stack *a)
 	max_inv = (long)a->size * (a->size - 1) / 2;
 	if (max_inv == 0)
 		return (0.0);
-	return ((double)inv / (double)max_inv);
+	return ((float)inv / (float)max_inv);
 }

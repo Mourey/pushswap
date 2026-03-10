@@ -14,7 +14,8 @@
 
 void	do_ra(t_context *ctx)
 {
-	op_ra(&ctx->a);
+	if (!op_ra(&ctx->a))
+		return ;
 	write(1, "ra\n", 3);
 	ctx->ops[OP_RA]++;
 	ctx->total_ops++;
@@ -22,7 +23,8 @@ void	do_ra(t_context *ctx)
 
 void	do_rb(t_context *ctx)
 {
-	op_rb(&ctx->b);
+	if (!op_rb(&ctx->b))
+		return ;
 	write(1, "rb\n", 3);
 	ctx->ops[OP_RB]++;
 	ctx->total_ops++;
@@ -30,7 +32,8 @@ void	do_rb(t_context *ctx)
 
 void	do_rr(t_context *ctx)
 {
-	op_rr(&ctx->a, &ctx->b);
+	if (!op_rr(&ctx->a, &ctx->b))
+		return ;
 	write(1, "rr\n", 3);
 	ctx->ops[OP_RR]++;
 	ctx->total_ops++;
