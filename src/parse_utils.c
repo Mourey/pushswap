@@ -12,6 +12,15 @@
 
 #include "push_swap.h"
 
+int	set_strategy(t_context *ctx, int strat)
+{
+	if (ctx->strategy_set)
+		return (0);
+	ctx->strategy = strat;
+	ctx->strategy_set = 1;
+	return (1);
+}
+
 int	is_valid_integer(const char *str)
 {
 	int	i;
@@ -48,8 +57,8 @@ int	ft_atol_safe(const char *str, long *result)
 	while (str[i])
 	{
 		val = val * 10 + (str[i] - '0');
-		if ((sign == 1 && val > INT_MAX)
-			|| (sign == -1 && val > (long)INT_MAX + 1))
+		if ((sign == 1 && val > INT_MAX) || (sign == -1 && val > (long)INT_MAX
+				+ 1))
 			return (0);
 		i++;
 	}

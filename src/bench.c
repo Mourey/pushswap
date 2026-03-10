@@ -6,7 +6,7 @@
 /*   By: rmourey- <rmourey-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 12:00:00 by rmourey-          #+#    #+#             */
-/*   Updated: 2026/02/24 12:00:00 by rmourey-         ###   ########.fr       */
+/*   Updated: 2026/03/10 17:13:41 by rmourey-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ static void	print_strategy(t_context *ctx)
 
 static void	print_ops_line(t_context *ctx, int start, int end)
 {
-	static const char	*names[] = {"sa", "sb", "ss", "pa", "pb",
-		"ra", "rb", "rr", "rra", "rrb", "rrr"};
+	static const char	*names[] = {"sa", "sb", "ss", "pa", "pb", "ra", "rb",
+			"rr", "rra", "rrb", "rrr"};
 	int					i;
 
 	ft_putstr_fd("[bench] ", 2);

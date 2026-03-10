@@ -26,6 +26,7 @@ static void	init_context(t_context *ctx)
 	ctx->total_ops = 0;
 	ctx->strategy = STRAT_ADAPTIVE;
 	ctx->bench = 0;
+	ctx->strategy_set = 0;
 	ctx->disorder = 0.0;
 	i = 0;
 	while (i < 11)

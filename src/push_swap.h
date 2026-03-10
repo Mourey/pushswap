@@ -48,6 +48,7 @@ typedef struct s_context
 	int		total_ops;
 	int		strategy;
 	int		bench;
+	int		strategy_set;
 	double	disorder;
 }			t_context;
 
@@ -97,6 +98,7 @@ void		do_rrr(t_context *ctx);
 
 /* parse_utils.c */
 int			ft_atol_safe(const char *str, long *result);
+int			set_strategy(t_context *ctx, int strat);
 int			is_valid_integer(const char *str);
 
 /* parse_args.c */

@@ -6,7 +6,7 @@
 /*   By: rmourey- <rmourey-@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 12:00:00 by rmourey-          #+#    #+#             */
-/*   Updated: 2026/03/10 14:01:18 by rmourey-         ###   ########.fr       */
+/*   Updated: 2026/03/10 17:02:47 by rmourey-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,13 @@ static int	check_duplicates(t_stack *a)
 static int	parse_flag(char *arg, t_context *ctx)
 {
 	if (ft_strncmp(arg, "--simple", 9) == 0)
-		ctx->strategy = STRAT_SIMPLE;
+		return (set_strategy(ctx, STRAT_SIMPLE));
 	else if (ft_strncmp(arg, "--medium", 9) == 0)
-		ctx->strategy = STRAT_MEDIUM;
+		return (set_strategy(ctx, STRAT_MEDIUM));
 	else if (ft_strncmp(arg, "--complex", 10) == 0)
-		ctx->strategy = STRAT_COMPLEX;
+		return (set_strategy(ctx, STRAT_COMPLEX));
 	else if (ft_strncmp(arg, "--adaptive", 11) == 0)
-		ctx->strategy = STRAT_ADAPTIVE;
+		return (set_strategy(ctx, STRAT_ADAPTIVE));
 	else if (ft_strncmp(arg, "--bench", 8) == 0)
 		ctx->bench = 1;
 	else
