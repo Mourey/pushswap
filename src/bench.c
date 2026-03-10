@@ -56,7 +56,7 @@ static void	print_strategy(t_context *ctx)
 static void	print_ops_line(t_context *ctx, int start, int end)
 {
 	static const char	*names[] = {"sa", "sb", "ss", "pa", "pb", "ra", "rb",
-			"rr", "rra", "rrb", "rrr"};
+		"rr", "rra", "rrb", "rrr"};
 	int					i;
 
 	ft_putstr_fd("[bench] ", 2);
