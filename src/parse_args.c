@@ -95,12 +95,7 @@ int	parse_args(int argc, char **argv, t_context *ctx)
 	i = 1;
 	while (i < argc)
 	{
-		if (argv[i][0] == '-' && argv[i][1] == '-')
-		{
-			if (!parse_flag(argv[i], ctx))
-				return (0);
-		}
-		else if (!parse_split_arg(ctx, argv[i]))
+		if (!parse_split_arg(ctx, argv[i]))
 			return (0);
 		i++;
 	}
