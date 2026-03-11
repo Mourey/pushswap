@@ -26,6 +26,7 @@ SRCS = src/main.c \
 	   src/sort_medium_utils.c \
 	   src/sort_complex.c \
 	   src/sort_adaptive.c \
+	   src/rotate_both.c \
 	   src/bench.c \
 	   src/utils.c
 

@@ -113,6 +113,9 @@ int			find_min_pos(t_stack *s);
 int			find_max_pos(t_stack *s);
 void		rotate_to_top(t_context *ctx, int pos, int stack_id);
 
+/* rotate_both.c */
+void		rotate_both_to_top(t_context *ctx, int pos_a, int pos_b);
+
 /* sort_tiny.c */
 void		sort_two(t_context *ctx);
 void		sort_three(t_context *ctx);

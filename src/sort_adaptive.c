@@ -55,14 +55,14 @@ static int	find_insert_pos(t_stack *a, int val)
 
 static void	reinsert_sorted(t_context *ctx)
 {
-	int	pos;
+	int	pos_a;
+	int	pos_b;
 
 	while (ctx->b.size > 0)
 	{
-		pos = find_max_pos(&ctx->b);
-		rotate_to_top(ctx, pos, 1);
-		pos = find_insert_pos(&ctx->a, ctx->b.data[0]);
-		rotate_to_top(ctx, pos, 0);
+		pos_b = find_max_pos(&ctx->b);
+		pos_a = find_insert_pos(&ctx->a, ctx->b.data[pos_b]);
+		rotate_both_to_top(ctx, pos_a, pos_b);
 		do_pa(ctx);
 	}
 	rotate_to_top(ctx, find_min_pos(&ctx->a), 0);
